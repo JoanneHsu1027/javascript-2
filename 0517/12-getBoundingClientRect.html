@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            border: 1px solid blue;
+            background-color: #8cbdf2;
+        }
+
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+            background-color: #ecb770;
+            left: 100px;
+            top: 100px;
+        }
+
+        .rect2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+            background-color: #d1f980;
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="rect">
+        <div class="ball">
+            <div class="rect2"></div>
+        </div>
+    </div>
+
+    <script>
+        const rect2 = document.querySelector(".rect2");
+        const r = rect2.getBoundingClientRect();
+
+        console.log(r);
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="myInput">
+
+    <script>
+        const myInput = document.querySelector("#myInput");
+
+        const handler = (e) => {
+            const { key, keyCode, which, code, isComposing } = e;
+            // 若要判斷功能鍵的左右鍵時, 使用 code
+            console.log({ key, keyCode, which, code, isComposing });
+
+            // isComposing 為 true 時, 表示中文輸入到一半
+            if (!isComposing) {
+                console.log(myInput.value);
+            }
+        };
+        myInput.addEventListener("keyup", handler);
+    </script>
+
+</body>
+
+</html>

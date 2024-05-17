@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        const a = 10, b = 6;
+
+        const obj = { a, b };
+        const ar1 = { a, b };
+
+        const obj2 = {
+            name: "bill",
+            age: 24,
+            gender: "male"
+        };
+        // 展開設定, 解構賦值
+        const { name, age } = obj2;
+        // 取值時, 不使用屬性名稱當變數
+        const { name: maName, age: maAge } = obj2;
+
+        const [c, d] = [9, 8, 7, 6, 5, 4];
+        const [e, f, ...g] = [9, 8, 7, 6, 5, 4];
+
+        console.log({ name, age, c, d, maName, myAge });
+        console.log({ g });
+    </script>
+
+</body>
+
+</html>

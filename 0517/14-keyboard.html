@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="myInput">
+
+    <script>
+        const myInput = document.querySelector("#myInput");
+
+        const handler = (e) => {
+            const { key, keyCode, which, code } = e;
+            console.log({ key, keyCode, which, code });
+        }
+
+        myInput.addEventListener("keyup", handler);
+    </script>
+
+</body>
+
+</html>

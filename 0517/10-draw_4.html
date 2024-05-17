@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .rect {
+        position: relative;
+        width: 800px;
+        height: 600px;
+        border: 1px solid blue;
+        background-color: #8cbdf2;
+    }
+
+    .ball {
+        position: absolute;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        border: 1px solid tomato;
+        background-color: tomato;
+        left: 100px;
+        top: 100px;
+        pointer-events: none;
+        transition: 1s;
+    }
+</style>
+</head>
+
+<body>
+    <div class="rect">
+    </div>
+
+    <script>
+        // 隨機 RGB 色碼 start
+        const getRandomRGB = () => {
+            let n = Math.floor(16777216 * Math.random());
+            n = n.toString(16); // 轉換成 16 進位的字串
+            return "#" + n.padStart(6, "0");
+        };
+        // 隨機 RGB 色碼 end
+
+        const rect = document.querySelector(".rect");
+        const info = document.querySelector("#info");
+        const mDown = (e) => {
+            rect.addEventListener("mousemove", mMove)
+        };
+        const mUp = (e) => {
+            rect.removeEventListener("mousemove", mMove)
+        };
+
+        const mMove = (e) => {
+            const size = 10 + Math.floor(Math.random() * 21); // 隨機大小, 範圍 10 ~ 30
+            const b = document.createElement("div")
+            b.className = "ball";
+            b.style.width = `${size}px`;
+            b.style.height = `${size}px`;
+            b.style.left = `${e.offsetX - size / 2}px`;
+            b.style.top = `${e.offsetY - size / 2}px`;
+            b.style.backgroundColor = getRandomRGB();
+            setTimeout(() => {
+                b.style.top = `600px`;
+                b.style.opacity = 0;
+            }, 30
+            )
+            rect.append(b);
+        };
+
+        rect.addEventListener("mousedown", mDown);
+        window.addEventListener("mouseup", mUp);
+
+
+    </script>
+
+
+</body>
+
+</html>

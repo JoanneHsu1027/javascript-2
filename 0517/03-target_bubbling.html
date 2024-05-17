@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .rect {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            border: 1px solid blue;
+            background-color: #8cbdf2;
+        }
+
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            background-color: #ecb770;
+            line-height: 300px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="rect">
+        <div class="ball"><span>Victor</span></div>
+    </div>
+
+    <script>
+        const rect = document.querySelector(".rect");
+        const ball = document.querySelector(".ball");
+
+        // event bubbling start
+        window.addEventListener("click", (e) => {
+            console.log("window--------------", e.eventPhase);
+        });
+        ball.addEventListener("click", (e) => {
+            console.log("ball--------------", e.eventPhase);
+        });
+        document.addEventListener("click", (e) => {
+            console.log("document--------------", e.eventPhase);
+        });
+        rect.addEventListener("click", (e) => {
+            console.log("rect--------------", e.eventPhase);
+        });
+        // event bubbling end
+
+    </script>
+
+</body>
+
+</html>
