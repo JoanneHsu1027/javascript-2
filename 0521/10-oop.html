@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person2 {
+            gender = "male"; // 直接設定屬性值
+
+            // 建構函式
+            constructor(name = "nobody", age = 0) {
+                this.name = name;
+                this.age = age;
+            }
+            getInfo() {
+                return `${this.name} ${this.age}`;
+            }
+            toString = () => JSON.stringify(this);
+        }
+
+        class Employee2 extends Person2 {
+            #id; // 宣告私有屬性
+
+            constructor(name, age, id) {
+                super(name, age); // 要在一開始呼父類的建構函式
+                this.#id = id;
+            }
+            // 改寫繼承來的方法 override
+            getInfo() {
+                return `${this.name} ${this.age} ${this.#id}`;
+            }
+        }
+
+        const p3 = new Employee2("peter", 25, "A003");
+
+        console.log(p3.getInfo());
+        // console.log(p3.#id); // 不在 class 外使用私有屬性
+        console.log(p3 + "");
+    </script>
+</body>
+
+</html>

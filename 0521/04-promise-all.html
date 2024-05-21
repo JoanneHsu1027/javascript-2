@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const myPromise1 = (n) => {
+            return new Promise((resolve, reject) => {
+                const ms = 200 + Math.floor(Math.random() * 500);
+                setTimeout(() => {
+                    resolve({ ms, n });
+                }, ms);
+            });
+        };
+
+        const pArr = [];
+
+        for (let i = 10; i <= 15; i++) {
+            /*
+            // 注意結果會不同
+            pArr.push(myPromise1(i).then(r=>{
+                console.log(`${i} 完成`, r);
+            }));
+            */
+            pArr.push(myPromise1(i));
+        }
+
+        Promise.all(pArr).then((r) => {
+            console.log(`全部都完成了`, r);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre id="info"></pre>
+
+    <script>
+
+        let n = 0;
+        const f = () => {
+            n++;
+            info.innerText = n;
+
+            setTimeout(f, 500);
+        };
+
+        f();
+
+    </script>
+
+</body>
+
+</html>

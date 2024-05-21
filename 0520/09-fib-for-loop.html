@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre id="info"></pre>
+
+    <script>
+        const cache = [0, 1];
+
+        const startTime = Date.now();
+
+        for (let i = 2; i <= 40; i++) {
+            cache[i] = cache[i - 1] + cache[i - 2];
+        }
+
+        info.innerText = JSON.stringify(cache) + "\n";
+        info.innerText += Date.now() - startTime;
+
+    </script>
+
+</body>
+
+</html>

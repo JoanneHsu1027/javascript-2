@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module">
+        import Person2, { PI, b } from "../modules/person2.js";
+        // import {b} from "./modules/person2.js";
+        import { b as otherName } from "./modules/person2.js";
+
+        console.log(b(7));
+        console.log(otherName(5));
+    </script>
+</body>
+
+</html>

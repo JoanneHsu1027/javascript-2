@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <button>123</button>
+    <script type="module">
+        const a = 10;
+        const btn = document.querySelector("button");
+
+        const func = () => {
+            console.log(event);
+        };
+        btn.addEventListener("click", func);
+    </script>
+
+    <script type="module">
+        // console.log(a); // 看不到另一個 module 的 scope
+    </script>
+</body>
+
+</html>

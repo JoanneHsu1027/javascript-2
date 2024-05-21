@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre id="info"></pre>
+
+    <script>
+
+        const info = document.querySelector("#info");
+        const ar1 = [..."教士隊日本強投達比修有今天主宰戰場，對勇士隊之"];
+        const ar2 = [12, 3, 67, 23, 9, 35];
+
+        info.innerText += JSON.stringify(ar1) + "\n\n";
+        info.innerText += JSON.stringify(ar2) + "\n\n";
+
+    </script>
+
+</body>
+
+</html>

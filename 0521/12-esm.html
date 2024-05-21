@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module">
+        import Person2 from "../modules/person2.js";
+        import MyData from "../modules/person2.js";
+
+        const p2 = new Person2("carl", 27);
+
+        console.log(p2.toString());
+        const p3 = new MyData("daphne", 26);
+
+        console.log(p3.toString());
+        console.log(Person2 === MyData);
+    </script>
+</body>
+
+</html>

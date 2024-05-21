@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre id="info"></pre>
+
+    <script>
+
+        const ar1 = [2, 3, 4, 5, 6, 7, 8, 9]
+
+
+        const ar2 = ar1.filter((el, i) => {
+            return el % 2; // 只取奇數值
+        });
+
+        info.innerText += "\n" + JSON.stringify(ar1) + "\n\n";
+        info.innerText += "\n" + JSON.stringify(ar2) + "\n\n";
+
+    </script>
+</body>
+
+</html>

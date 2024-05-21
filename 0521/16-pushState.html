@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="myPushState()">pushState</button>
+    <pre id="info"></pre>
+    <script>
+        let count = 1;
+
+        const myPushState = () => {
+            count++;
+            history.pushState({ count }, "", `/hello/${count}?id=${count}`);
+        };
+
+        window.addEventListener("popstate", (e) => {
+            const { pathname, search } = location;
+
+            info.innerText = JSON.stringify(
+                { pathname, search, state: history.state },
+                null,
+                4
+            );
+            console.log({ pathname, search, state: history.state });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre id="info"></pre>
+
+    <script>
+
+        var a = 10;  // 在全域會變成 window 的屬性
+        let b = 20;
+
+        function c() { }  // 在全域會變成 window 的屬性
+
+        console.log({ a, b, c });
+        console.log([window.a, window.b, window.c]);
+
+        // IIFE, 立即執行的函式
+        (function () {
+            console.log(123);
+        })();
+        (() => {
+            console.log(456);
+        })();
+
+
+    </script>
+
+</body>
+
+</html>

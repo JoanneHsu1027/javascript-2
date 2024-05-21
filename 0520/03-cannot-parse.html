@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <pre id="info"></pre>
+
+    <script>
+
+        const p1 = { name: "david", age: 22 };
+        const p2 = { name: "peter", age: 25 };
+        const p3 = { name: "joe", age: 23 };
+
+        p1.next = p2;
+        p2.next = p3;
+        p3.next = p1;
+
+        //const str = JSON.stringify(p1); // 出錯: 結構上是 circular structure
+
+        const q1 = structuredClone(p1);
+
+        p1.next.name = "john";
+        console.log(p1.next.name);
+        console.log(q1.next.name);
+
+    </script>
+</body>
+
+</html>

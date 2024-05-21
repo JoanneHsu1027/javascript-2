@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <button>1</button><br />
+    <button>2</button><br />
+    <button>3</button><br />
+    <button>4</button><br />
+    <script>
+        const [b1, b2, b3, b4] = document.querySelectorAll("button");
+
+        const f1 = function () {
+            console.log(this); // this: context
+        };
+        const f2 = () => {
+            // 箭頭函式在建立時, 就會立即綁死 this 為當前的 context
+            console.log(this); // this: context
+        };
+
+        f1();
+        f2();
+
+        b1.addEventListener("click", f1);
+        b2.addEventListener("click", f1);
+        b3.addEventListener("click", f2);
+        b4.addEventListener("click", f2);
+    </script>
+</body>
+
+</html>

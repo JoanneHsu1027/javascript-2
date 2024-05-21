@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 舊的 OOP, Object-oriented programming
+        function Person1(name, age) {
+            this.name = name;
+            this.age = age;
+            this.sayHello = function () {
+                return 'Hello ' + this.name;
+            }
+        }
+
+        var p1 = new Person1('bill', 25);
+
+        console.log(p1.name, p1.age);
+        console.log(p1.sayHello());
+        console.log(p1.toString());
+
+        // toString 功能修改
+        Person1.prototype.toString = function () {
+            return JSON.stringify(this);
+        };
+        console.log(p1.toString());
+    </script>
+</body>
+
+</html>

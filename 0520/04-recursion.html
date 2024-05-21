@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre id="info"></pre>
+
+    <script>
+
+        const f = (n) => {
+            if (n <= 1) return 1;
+            return n * f(n - 1);
+        };
+
+        info.innerText = f(6) + "\n";
+        info.innerText += f(7) + "\n";
+        info.innerText += f(8) + "\n";
+
+    </script>
+
+</body>
+
+</html>
